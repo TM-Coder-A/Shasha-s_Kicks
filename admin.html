@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Shasha's Kicks</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="admin-body">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">SK</span>
+        <span>
+          <strong>Shasha's Kicks</strong>
+          <small>Admin Panel</small>
+        </span>
+      </a>
+
+      <nav class="nav-links admin-nav">
+        <a href="index.html">View Website</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <section id="loginSection" class="login-card">
+      <p class="eyebrow">Admin Access</p>
+      <h1>Login to manage products.</h1>
+      <p class="muted">Default login: <strong>admin</strong> / <strong>Shasha@123</strong></p>
+
+      <div class="notice">
+        This version works as a front-end demo. It saves changes inside your browser. For a live website where all visitors see admin changes, you need a backend/database.
+      </div>
+
+      <form id="loginForm">
+        <input id="adminUsername" type="text" placeholder="Username" required />
+        <input id="adminPassword" type="password" placeholder="Password" required />
+        <button class="btn btn-gold" type="submit">Login</button>
+      </form>
+    </section>
+
+    <section id="dashboardSection" class="container admin-layout hidden">
+      <aside class="admin-card admin-sidebar">
+        <p class="eyebrow">Dashboard</p>
+        <h2>Admin Menu</h2>
+        <p class="muted">Add, edit, remove products and update key website details.</p>
+
+        <div class="admin-actions">
+          <a class="btn btn-gold" href="index.html">View Website</a>
+          <button class="btn btn-neutral" id="exportBtn">Export Data</button>
+          <button class="btn btn-danger" id="logoutBtn">Logout</button>
+        </div>
+      </aside>
+
+      <div class="admin-main">
+        <section class="admin-card">
+          <p class="eyebrow">Website Settings</p>
+          <h2>Change business information</h2>
+          <form id="settingsForm">
+            <div class="form-grid">
+              <input id="brandNameInput" type="text" placeholder="Brand name" required />
+              <input id="taglineInput" type="text" placeholder="Tagline" required />
+              <input id="phoneDisplayInput" type="text" placeholder="Displayed phone number" required />
+              <input id="whatsappNumberInput" type="text" placeholder="WhatsApp number e.g. 2349136515520" required />
+              <input id="locationInput" type="text" placeholder="Location" required />
+              <input id="socialHandleInput" type="text" placeholder="Social handle" required />
+              <input class="full" id="heroTitleInput" type="text" placeholder="Homepage headline" required />
+              <textarea class="full" id="heroTextInput" placeholder="Homepage description" required></textarea>
+            </div>
+            <div class="admin-actions">
+              <button class="btn btn-gold" type="submit">Save Settings</button>
+              <button class="btn btn-neutral" id="resetSettingsBtn" type="button">Reset Settings</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="admin-card">
+          <p class="eyebrow">Product Manager</p>
+          <h2 id="productFormTitle">Add new product</h2>
+          <form id="productForm">
+            <input id="productId" type="hidden" />
+            <div class="form-grid">
+              <input id="productName" type="text" placeholder="Product name" required />
+              <input id="productCategory" type="text" placeholder="Category e.g. Sneakers" required />
+              <input id="productPrice" type="text" placeholder="Price e.g. ₦25,000 or Contact for price" required />
+              <input id="productSizes" type="text" placeholder="Sizes e.g. 39, 40, 41, 42" required />
+              <input class="full" id="productImageUrl" type="text" placeholder="Image link, optional if uploading image below" />
+              <input class="full" id="productImageFile" type="file" accept="image/*" />
+              <textarea class="full" id="productDescription" placeholder="Product description" required></textarea>
+            </div>
+            <p class="help-text">Tip: small compressed images work best for this browser-based version.</p>
+            <div class="admin-actions">
+              <button class="btn btn-gold" type="submit">Save Product</button>
+              <button class="btn btn-neutral" id="clearFormBtn" type="button">Clear Form</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="admin-card">
+          <p class="eyebrow">Current Products</p>
+          <h2>Product list</h2>
+          <div id="adminProductList" class="admin-product-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="product-store.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
